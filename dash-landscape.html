@@ -1,0 +1,154 @@
+<style>
+	.fullscreen {
+		left: 0;
+		top: 0;
+		width: 1280px;
+		height: 720px;
+		z-index: 100;
+	}
+
+	.full {
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.header{
+		top: 0;
+		height: 100px;
+		row: 1;
+		col: 2;
+		cell_w: (50%, 50%);
+	}
+
+	.footer{
+		bottom: 0;
+		height: 100px;
+		row: 1;
+		col: 2;
+		cell_w: (50%, 50%);
+	}
+
+	.controls{
+		top: 100px;
+		height: 520px;
+		row: 1;
+		col: 2;
+		cell_w: (50%, 50%);
+	}
+
+	.map{
+		z-index: 10;
+	}
+
+	.info{
+		row: 4;
+		col: 2;
+		cell_w: (50%, 50%);
+	}
+
+	.icon {
+		width: 100px;
+		height: 100px;
+		image_align: "center";
+		image_valign: "center";
+		z-index: 40;
+	}
+
+	.back-btn-text {
+		top: 10px;
+		left: 10px;
+		width: 235px;
+		height: 80px;
+		align: "center";
+		valign: "center";
+		z-index: 40;
+	}
+
+	#layer_test > BUTTON {
+		image: "button1.png";
+		image_pressed: "button2.png";
+		image_disabled: "button3.png";
+		image_flexible: true;
+		z-index: 30;
+	}
+
+	#dash_btn_high{
+		top: 123px;
+		right: 10px;
+	}
+
+	#dash_btn_mid{
+		top: 220px;
+		right: 10px;
+	}
+
+	#dash_btn_low{
+		top: 316px;
+		right: 10px;
+	}
+
+	#bottom-map-text{
+		align: "center";
+	}
+
+</style>
+
+<layer layer_dash class="fullscreen">
+	<sprite dash_bg class="full" image="background.png" z-index="10">
+
+		<table dash_head class="full header">
+			<text text="Combined Dashboard" />
+			<div dash_map_info class="full">
+				<sprite class="full icon" image="dir-icon.png" />
+				<text text="70m" />
+				<sprite class="full icon" image="hseparator.png" />
+				<text text="Next Street Name" />
+			</div>
+		</table>
+
+		<table dash_controls class="full controls">
+			<div dash_route_info class="route_info">
+				<speedometer dash_speedometer class="full speedometer" />
+				<table dash_info class="full info">
+					<div class="full">
+						<text text="Speed Limit:" />
+						<text text="70 kph" />
+					</div>
+					<div class="full">
+						<text text="Route Length:" />
+						<text text="78 km" />
+					</div>
+					<div class="full">
+						<text text="ETA:" />
+						<text text="18:08" />
+					</div>
+					<div class="full">
+						<text text="Current Time:" />
+						<text text="17:32" />
+					</div>
+				</table>
+			</div>
+			<map dash_map class="full map">
+				<button dash_btn_high class="full" >
+					<sprite class="full" image="btn-high.png" />
+				</button>
+				<button dash_btn_mid class="full" >
+					<sprite class="full icon" image="btn-mid.png" />
+				</button>
+				<button dash_btn_low class="full">
+					<sprite class="full icon" image="btn-low.png" />
+				</button>
+			</map>
+		</table>
+
+		<table dash_foot class="full footer">
+			<button dash_btn_back class="full" >
+				<text class="back-btn-text" text="Back"/>
+			</button>
+			<text class="full bottom-map-text" text="Current Street Name" />
+		</table>
+
+	</sprite>
+</layer>
